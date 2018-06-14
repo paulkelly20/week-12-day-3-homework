@@ -25,13 +25,13 @@ const requestStatus = function(){
 var addBeerToList= function (beers) {
   var ul = document.querySelector('#list-of-beers');
   beers.forEach(function(beer){
-  const listItem = document.createElement('li');
-  listItem.textContent = beer.name;
-  var imageTag = document.createElement("img");
-  imageTag.width = "50";
-  imageTag.src = beer.image_url;
-  listItem.appendChild(imageTag);
-  ul.appendChild(listItem);})
+    const listItem = document.createElement('li');
+    listItem.textContent = beer.name;
+    var imageTag = document.createElement("img");
+    imageTag.width = "50";
+    imageTag.src = beer.image_url;
+    listItem.appendChild(imageTag);
+    ul.appendChild(listItem);})
 }
 
 const beerDropDown = function(beers){
@@ -49,14 +49,14 @@ const beerDropDown = function(beers){
   const handleSelectChange = function(){
   let beer = JSON.parse(this.value)
   var ul = document.querySelector('#list-of-beers');
-  ul.parentNode.removeChild(ul);
+  ul.style.display = 'none';
   displayBeerInfo(beer);
 };
 const displayBeerInfo = function(beer){
   let pTag = document.querySelector('#beer-info')
   pTag.textContent = `Name: ${beer.name} Description: ${beer.description} `;
   var imageTag = document.createElement("img");
-  imageTag.width = "250";
+  imageTag.width = "200";
   imageTag.src = beer.image_url;
   pTag.appendChild(imageTag);
 
